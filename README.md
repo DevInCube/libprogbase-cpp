@@ -1,7 +1,5 @@
 # libprogbase-cpp v0.1.0
 
-[![Travis-CI][travis-badge]][travis-builds]
-
 [Repository home][home]
 
 A simple C++ wrapper library for [libprogbase][libprogbase].
