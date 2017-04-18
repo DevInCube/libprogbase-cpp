@@ -4,6 +4,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdexcept>
 
 namespace pb {
     #include <progbase.h>
@@ -107,10 +108,9 @@ public:
 
 // Exception
 
-class progbase::net::NetException {
-    std::string _message;
+class progbase::net::NetException : public std::runtime_error {
 public:
     NetException(const std::string &msg);
-    std::string message(void);
-    std::string message(void) const;
+    std::string message(void) __attribute__ ((deprecated));
+    std::string message(void) const __attribute__ ((deprecated));
 };

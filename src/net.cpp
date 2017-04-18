@@ -49,7 +49,7 @@ NetMessage::~NetMessage(void) {
 
 void NetMessage::setDataString(const std::string & str) {
     if (str.length() >= message.bufferLength) {
-        throw new std::overflow_error("input string is longer than message buffer");
+        throw std::overflow_error("input string is longer than message buffer");
     }
     pb::NetMessage_setDataString(&message, str.c_str());
 }
@@ -92,16 +92,17 @@ void UdpClient::sendTo(NetMessage &message, const IpAddress &address) {
 
 // Exception
 
-NetException::NetException(const std::string &msg) {
-    _message = msg;
+NetException::NetException(const std::string &msg) 
+    : std::runtime_error(msg) {
+    //
 }
 
 std::string NetException::message(void) {
-    return _message;
+    return what();
 }
 
 std::string NetException::message(void) const {
-    return _message;
+    return what();
 }
 
 // TCP

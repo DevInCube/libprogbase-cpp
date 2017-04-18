@@ -7,5 +7,8 @@
 		"-I../include",
 		"-Iinclude",
 		"-I./"
-	]
+	],
+	"files.associations": {
+		"stdexcept": "cpp"
+	}
 }

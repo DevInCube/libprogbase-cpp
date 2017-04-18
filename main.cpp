@@ -9,7 +9,12 @@
 using namespace std;
 
 int main(void) {
-	progbase::net::IpAddress addr("127.0.0.1", 80);
-	cout << addr.address() << endl;
+	try {
+		throw progbase::net::NetException("Error");
+		progbase::net::IpAddress addr("127.0.0.1", 80);
+		cout << addr.address() << endl;
+	} catch (progbase::net::NetException const & exc) {
+		cerr << exc.what() << endl;
+	}
 	return 0;
 }
