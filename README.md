@@ -1,8 +1,13 @@
-# libprogbase-cpp v0.1.0
+# libprogbase-cpp v0.1.1
 
 [Repository home][home]
 
 A simple C++ wrapper library for [libprogbase][libprogbase].
+
+## New in v0.1.1
+
+* `NetMessage` class now inherits from `std::runtime_error`.
+* `NetMessage` method `message()` marked as deprecated. Use method `what()` instead.
 
 ## Version v0.1.0
 
