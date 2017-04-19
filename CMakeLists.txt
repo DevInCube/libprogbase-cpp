@@ -20,4 +20,4 @@ project (a.out)
 add_executable(${CMAKE_PROJECT_NAME} "main.cpp")
 target_link_libraries(${CMAKE_PROJECT_NAME} progbase progbase-cpp)
 
-SET(CMAKE_CXX_FLAGS "-std=c++11 -Werror -Wall")
+SET(CMAKE_CXX_FLAGS "-std=c++0x -Werror -Wall")
