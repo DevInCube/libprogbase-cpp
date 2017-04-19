@@ -23,7 +23,7 @@ Install the latest version of [libprogbase][libprogbase] library.
 
 Clone this repository with command:
 
-~~~~
+~~~~sh
 git clone https://github.com/PublicHadyniak/libprogbase-cpp.git
 ~~~~
 
@@ -40,8 +40,10 @@ sudo make install
 Include header files from `include/` directory and compile your code with linker options:
 
 ```sh
--lprogbase -lprogbase-cpp
+-lprogbase-cpp -lprogbase
 ```
+
+__Note__ that it is important to link `libprogbase-cpp` before `libprogbase`!
 
 ## Library update
 
