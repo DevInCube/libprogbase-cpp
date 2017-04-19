@@ -6,6 +6,6 @@ compiler:
   - gcc
 
 before_install:
-  - ./install-libprogbase.sh
+  - sh ./install-libprogbase.sh
 
 script: cmake . && make . && sudo make install
