@@ -57,6 +57,8 @@ class progbase::net::NetMessage {
     pb::NetMessage message;
     char * buffer;
     int size;
+
+    void construct(int size);
 public:
     NetMessage(int size);
     NetMessage(const NetMessage &other);

@@ -32,14 +32,18 @@ int IpAddress::port(void) {
 
 // NetMessage
 
-NetMessage::NetMessage(int size) {
+void NetMessage::construct(int size) {
     buffer = new char[size];
     this->size = size;
     pb::NetMessage_init(&message, buffer, size);
 }
 
-NetMessage::NetMessage(const NetMessage &other)
-    : NetMessage(other.size) {
+NetMessage::NetMessage(int size) {
+    construct(size);
+}
+
+NetMessage::NetMessage(const NetMessage &other) {
+    construct(other.size);
     memcpy(buffer, other.buffer, sizeof(char) * size);
 }
 
