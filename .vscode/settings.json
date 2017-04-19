@@ -9,6 +9,7 @@
 		"-I./"
 	],
 	"files.associations": {
-		"stdexcept": "cpp"
+		"stdexcept": "cpp",
+		"initializer_list": "cpp"
 	}
 }

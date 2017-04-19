@@ -1,10 +1,14 @@
-# libprogbase-cpp v0.1.1
+# libprogbase-cpp v0.2.0
 
 [![Travis-CI][travis-badge]][travis-builds]
 
 [Repository home][home]
 
 A simple C++ wrapper library for [libprogbase][libprogbase].
+
+## New in v0.2.0
+
+* New module `console` wrapper (for new interface version).
 
 ## New in v0.1.1
 
