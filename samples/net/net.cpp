@@ -16,7 +16,7 @@ int udpClient() {
         std::string str = message.dataAsString();
         cout << ">> Received " << str.length() << " bytes: " << endl << str << endl;
     } catch(NetException const & exc) {
-        cerr << exc.message() << endl;
+        cerr << exc.what() << endl;
     }
     return 0;
 }
@@ -37,7 +37,7 @@ int udpServer() {
             cout << ">> Response sent." << endl;
         }
     } catch (NetException const & exc) {
-        cerr << exc.message() << endl;
+        cerr << exc.what() << endl;
     }
     return 0;
 }
@@ -59,7 +59,7 @@ int tcpServer() {
             delete client;
         }
     } catch(NetException const & exc) {
-        cerr << exc.message() << endl;
+        cerr << exc.what() << endl;
     }
     return 0;
 }
