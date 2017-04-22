@@ -28,6 +28,7 @@ namespace progbase {
         class UdpClient;
         class TcpListener;
         class TcpClient;
+        class Ssl;
     }
 }
 
@@ -104,6 +105,7 @@ public:
     ~TcpClient(void);
 
     void connect(const IpAddress &address);
+    void connect(const IpAddress &address, const Ssl &ssl);
     void send(NetMessage & message);
     void receive(NetMessage & message);
 };
@@ -115,4 +117,14 @@ public:
     NetException(const std::string &msg);
     std::string message(void) __attribute__ ((deprecated));
     std::string message(void) const __attribute__ ((deprecated));
+};
+
+
+class progbase::net::Ssl {
+    friend class TcpClient;
+
+    pb::Ssl ssl;
+public:
+    Ssl(void);
+    ~Ssl(void);
 };

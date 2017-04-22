@@ -151,6 +151,15 @@ void TcpClient::connect(const IpAddress &address) {
     }
 }
 
+void TcpClient::connect(const IpAddress &address, const Ssl &ssl) {
+    if (!pb::TcpClient_connectSecure(
+            &client, 
+            (pb::IpAddress *)&address._address,
+            (pb::Ssl *)&ssl.ssl)) {
+        throw NetException("Error at connect");
+    }
+}
+
 void TcpClient::receive(NetMessage &message) {
     if(!pb::TcpClient_receive(&client, &message.message)){
         throw NetException("Error at send");
@@ -161,4 +170,12 @@ void TcpClient::send(NetMessage &message) {
     if(!pb::TcpClient_send(&client, &message.message)){
         throw NetException("Error at send");
     }
+}
+
+Ssl::Ssl(void) {
+    pb::Ssl_init(&ssl);
+}
+
+Ssl::~Ssl(void) {
+    pb::Ssl_cleanup(&ssl);
 }
