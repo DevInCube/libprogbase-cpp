@@ -6,6 +6,10 @@ compiler:
   - gcc
 
 before_install:
-  - sh ./install-libprogbase.sh
+  - sudo apt-get install libssl-dev
+  - sh scripts/install-libprogbase.sh
 
-script: cmake . && make . && sudo make install
+script: 
+  - cmake . 
+  - make .
+  - sudo make install
