@@ -5,11 +5,11 @@ using namespace std;
 using namespace progbase::net;
 
 int httpsClient(void) {
+    Ssl ssl;
     TcpClient client;
     NetMessage message(100);
     try {
 		auto ipAddress = IpAddress(Ip::resolveHostname("api.sunrise-sunset.org"), 443);
-		Ssl ssl;
         client.connect(ipAddress, ssl);
         message.setDataString(
 			"GET /json?lat=36.7201600&lng=-4.4203400 HTTP/1.0\r\n"
@@ -28,7 +28,6 @@ int httpsClient(void) {
     return 0;
 }
 
-int main(void)
-{ 
+int main(void) { 
     return httpsClient();
 }
