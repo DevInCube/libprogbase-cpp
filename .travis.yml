@@ -4,6 +4,14 @@ os:
   - linux
 compiler: 
   - gcc
+  
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake-data
+      - cmake
 
 before_install:
   - sudo apt-get install libssl-dev
