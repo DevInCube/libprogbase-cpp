@@ -15,7 +15,7 @@ int udpClient() {
         client.receiveFrom(message, serverAddress);
         std::string str = message.dataAsString();
         cout << ">> Received " << str.length() << " bytes: " << endl << str << endl;
-    } catch(NetException const & exc) {
+    } catch (const NetException & exc) {
         cerr << exc.what() << endl;
     }
     return 0;
@@ -36,7 +36,7 @@ int udpServer() {
             server.sendTo(message, clientAddress);
             cout << ">> Response sent." << endl;
         }
-    } catch (NetException const & exc) {
+    } catch (const NetException & exc) {
         cerr << exc.what() << endl;
     }
     return 0;
@@ -58,7 +58,7 @@ int tcpServer() {
             cout << ">> Response sent." << endl;
             delete client;
         }
-    } catch(NetException const & exc) {
+    } catch (const NetException & exc) {
         cerr << exc.what() << endl;
     }
     return 0;
@@ -77,7 +77,7 @@ int tcpWebClient(void) {
             std::string str = message.dataAsString();
             cout << ">> Received " << str.length() << " bytes: " << endl << str << endl;
         } while (!message.isEmpty());
-    } catch(NetException const & exc) {
+    } catch (const NetException & exc) {
         cerr << exc.what() << endl;
     }
     return 0;
