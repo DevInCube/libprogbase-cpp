@@ -115,8 +115,6 @@ public:
 class progbase::net::NetException : public std::runtime_error {
 public:
     NetException(const std::string &msg);
-    std::string message(void) __attribute__ ((deprecated));
-    std::string message(void) const __attribute__ ((deprecated));
 };
 
 
