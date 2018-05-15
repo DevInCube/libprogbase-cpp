@@ -10,22 +10,9 @@ A simple C++ wrapper library for [libprogbase][libprogbase].
 
 Now all releases and corresponding release notes will be published in [Releases][releases] section
 
-### New in v0.2.1
+### Older releases 
 
-* An update for `libprogbase` __v0.3.4__ SSL security features.
-
-### New in v0.2.0
-
-* New module `console` wrapper (for new interface version).
-
-### New in v0.1.1
-
-* `NetMessage` class now inherits from `std::runtime_error`.
-* `NetMessage` method `message()` marked as deprecated. Use method `what()` instead.
-
-### Version v0.1.0
-
-* Wrapper module `progbase/net` for networking.
+All release notes up to 0.2.1 are [here](/old_releases.md)
 
 ## Installation and linkage
 
