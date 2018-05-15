@@ -1,4 +1,4 @@
-# libprogbase-cpp v0.2.1
+# libprogbase-cpp v0.3.0
 
 [![Travis-CI][travis-badge]][travis-builds]
 
