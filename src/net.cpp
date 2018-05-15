@@ -101,14 +101,6 @@ NetException::NetException(const std::string &msg)
     //
 }
 
-std::string NetException::message(void) {
-    return what();
-}
-
-std::string NetException::message(void) const {
-    return what();
-}
-
 // TCP
 
 TcpListener::TcpListener(void) {
