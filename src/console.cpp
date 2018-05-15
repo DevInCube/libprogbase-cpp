@@ -55,7 +55,7 @@ void Console::hideCursor(void) {
 }
 
 void Console::showCursor(void) {
-	pb::Console_hideCursor();
+	pb::Console_showCursor();
 }
 
 void Console::lockInput(void) {
